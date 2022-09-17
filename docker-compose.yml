@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  postgres:
+    container_name: spring_servlet_security_postgres
+    environment:
+      POSTGRES_DB: spring
+      POSTGRES_USER: spring
+      POSTGRES_PASSWORD: spring
+      POSTGRES_HOST_AUTH_METHOD: scram-sha-256
+      POSTGRES_INITDB_ARGS: --auth-host=scram-sha-256
+    image: postgres:14
+    ports:
+      - "5433:5432"
+    volumes:
+      - type: volume
+        source: pgsql_data
+        target: /var/lib/postgresql/data
+
+volumes:
+  pgsql_data:

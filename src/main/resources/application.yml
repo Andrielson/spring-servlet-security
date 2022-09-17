@@ -1,0 +1,16 @@
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+
+spring:
+  datasource:
+    initialize: true
+    url: jdbc:postgresql://localhost:5433/spring
+    username: spring
+    password: spring
+  security:
+    user:
+      name: andrielson
+      password: password
